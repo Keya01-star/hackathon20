@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "575372699967",
+    "firebase_url": "https://heckathon-d6b23.firebaseio.com",
+    "project_id": "heckathon-d6b23",
+    "storage_bucket": "heckathon-d6b23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575372699967:android:811e099d25eea581174b8a",
+        "android_client_info": {
+          "package_name": "com.utsav.hackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575372699967-vh8lkf0npqvgn8loc9cr490i3mprhghi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCch6tTthCh759IP5BF1rp8kg0MBujnVXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575372699967-vh8lkf0npqvgn8loc9cr490i3mprhghi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
