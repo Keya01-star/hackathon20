@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grocery_shopping/SizeConfig.dart';
-import 'package:flutter_grocery_shopping/fruits.dart';
+import 'package:flutter_grocery_shopping/paintings.dart';
 import 'package:flutter_grocery_shopping/nuts.dart';
 import 'package:flutter_grocery_shopping/vegetables.dart';
 
@@ -36,7 +36,8 @@ class MyMainPage extends StatefulWidget {
   _MyMainPageState createState() => _MyMainPageState();
 }
 
-class _MyMainPageState extends State<MyMainPage> with SingleTickerProviderStateMixin{
+class _MyMainPageState extends State<MyMainPage>
+    with SingleTickerProviderStateMixin {
   TabController tabController;
 
   @override
@@ -56,13 +57,23 @@ class _MyMainPageState extends State<MyMainPage> with SingleTickerProviderStateM
             padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 50.0),
             child: Row(
               children: <Widget>[
-                Icon(Icons.menu, color: Colors.black, size: 6 * SizeConfig.imageSizeMultiplier,),
+                Icon(
+                  Icons.menu,
+                  color: Colors.black,
+                  size: 6 * SizeConfig.imageSizeMultiplier,
+                ),
                 Spacer(),
-                Icon(Icons.shopping_cart, color: Colors.black, size: 6 * SizeConfig.imageSizeMultiplier,)
+                Icon(
+                  Icons.shopping_cart,
+                  color: Colors.black,
+                  size: 6 * SizeConfig.imageSizeMultiplier,
+                )
               ],
             ),
           ),
-          SizedBox(height: 5 * SizeConfig.heightMultiplier,),
+          SizedBox(
+            height: 5 * SizeConfig.heightMultiplier,
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 20.0, right: 20.0),
             child: Container(
@@ -77,62 +88,71 @@ class _MyMainPageState extends State<MyMainPage> with SingleTickerProviderStateM
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: Row(
                   children: <Widget>[
-                    Text("Search here", style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 2.4 * SizeConfig.textMultiplier,
-                      fontFamily: 'OpenSans'
-                    ),),
+                    Text(
+                      "Search here",
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 2.4 * SizeConfig.textMultiplier,
+                          fontFamily: 'OpenSans'),
+                    ),
                     Spacer(),
-                    Icon(Icons.search, color: Colors.black, size: 6 * SizeConfig.imageSizeMultiplier,)
+                    Icon(
+                      Icons.search,
+                      color: Colors.black,
+                      size: 6 * SizeConfig.imageSizeMultiplier,
+                    )
                   ],
                 ),
               ),
             ),
           ),
-          SizedBox(height: 5 * SizeConfig.heightMultiplier,),
+          SizedBox(
+            height: 5 * SizeConfig.heightMultiplier,
+          ),
           TabBar(
-            controller: tabController,
-            indicatorColor: Colors.green,
+              controller: tabController,
+              indicatorColor: Colors.green,
               indicatorWeight: 3.0,
               labelColor: Colors.black,
               unselectedLabelColor: Colors.grey,
               isScrollable: true,
               tabs: <Widget>[
                 Tab(
-                  child: Text("Painting", style: TextStyle(
-                    fontSize: 2.5 * SizeConfig.textMultiplier,
-                    fontFamily: 'OpenSans'
-                  ),),
+                  child: Text(
+                    "Painting",
+                    style: TextStyle(
+                        fontSize: 2.5 * SizeConfig.textMultiplier,
+                        fontFamily: 'OpenSans'),
+                  ),
                 ),
                 Tab(
-                  child: Text("Sculpture", style: TextStyle(
-                      fontSize: 2.5 * SizeConfig.textMultiplier,
-                      fontFamily: 'OpenSans'
-                  ),),
+                  child: Text(
+                    "Sculpture",
+                    style: TextStyle(
+                        fontSize: 2.5 * SizeConfig.textMultiplier,
+                        fontFamily: 'OpenSans'),
+                  ),
                 ),
                 Tab(
-                  child: Text("Magazine", style: TextStyle(
-                      fontSize: 2.5 * SizeConfig.textMultiplier,
-                      fontFamily: 'OpenSans'
-                  ),),
+                  child: Text(
+                    "Magazine",
+                    style: TextStyle(
+                        fontSize: 2.5 * SizeConfig.textMultiplier,
+                        fontFamily: 'OpenSans'),
+                  ),
                 ),
-                
               ]),
           Expanded(
             child: Container(
-              child: TabBarView(
-                controller: tabController,
-                  children: <Widget>[
-                    Fruits(),
-                    Vegetables(),
-                    Nuts(),
-                  
+              child: TabBarView(controller: tabController, children: <Widget>[
+                Paintings(),
+                Vegetables(),
+                Nuts(),
               ]),
             ),
           )
         ],
       ),
-
     );
   }
 }
