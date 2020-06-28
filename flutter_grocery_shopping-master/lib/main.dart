@@ -117,7 +117,7 @@ class _MyMainPageState extends State<MyMainPage> with TickerProviderStateMixin {
         top: 0,
         bottom: 0,
         left: isCollapsed ? 0 : 0.6 * screenWidth,
-        right: isCollapsed ? 0 : -0.2 * screenWidth,
+        right: isCollapsed ? 0 : -0.6 * screenWidth,
         child: ScaleTransition(
             scale: _scaleAnimation,
             child: Material(
