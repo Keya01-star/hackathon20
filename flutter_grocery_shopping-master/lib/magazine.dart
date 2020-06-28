@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_grocery_shopping/SizeConfig.dart';
 import 'package:flutter_grocery_shopping/magazinedetails.dart';
 
-
 void main() => runApp(MyAppnew1());
 
 class MyAppnew1 extends StatelessWidget {
@@ -20,7 +19,6 @@ class MyAppnew1 extends StatelessWidget {
 class Magazine extends StatefulWidget {
   Magazine({Key key, this.title}) : super(key: key);
 
-
   final String title;
 
   @override
@@ -28,11 +26,9 @@ class Magazine extends StatefulWidget {
 }
 
 class _MagazineState extends State<Magazine> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       backgroundColor: Colors.brown,
       body: SingleChildScrollView(
         child: Column(
@@ -48,10 +44,7 @@ class _MagazineState extends State<Magazine> {
                       children: <Widget>[
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Fourth()));
+                            Navigator.push(context, SizeRoute(page: Fourth()));
                           },
                           child: _buildFruitCard(
                               "Frontline",
@@ -66,9 +59,7 @@ class _MagazineState extends State<Magazine> {
                         GestureDetector(
                           onTap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Operation()));
+                                context, SizeRoute(page: Operation()));
                           },
                           child: _buildFruitCard(
                               "Operation",
@@ -82,28 +73,17 @@ class _MagazineState extends State<Magazine> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Tinkle()));
+                            Navigator.push(context, SizeRoute(page: Tinkle()));
                           },
-                          child: _buildFruitCard(
-                            "Tinkle",
-                              "assets/tinkle.jpg",
-                              "₹150",
-                              
-                              0xff424242,
-                              0XffF9EFB0),
+                          child: _buildFruitCard("Tinkle", "assets/tinkle.jpg",
+                              "₹150", 0xff424242, 0XffF9EFB0),
                         ),
                         SizedBox(
                           height: 2 * SizeConfig.heightMultiplier,
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Clairon()));
+                            Navigator.push(context, SizeRoute(page: Clairon()));
                           },
                           child: _buildFruitCard(
                               "Clairon",
@@ -129,7 +109,7 @@ class _MagazineState extends State<Magazine> {
                               child: Column(
                                 children: <Widget>[
                                   Text(
-                                    "Life is ",
+                                    "It is a ",
                                     style: TextStyle(
                                         fontFamily: 'OpenSans-Bold',
                                         fontWeight: FontWeight.bold,
@@ -141,7 +121,7 @@ class _MagazineState extends State<Magazine> {
                                     height: 10.0,
                                   ),
                                   Text(
-                                    "ART",
+                                    "GIFT",
                                     style: TextStyle(
                                         fontFamily: 'OpenSans-Bold',
                                         fontWeight: FontWeight.bold,
@@ -162,7 +142,7 @@ class _MagazineState extends State<Magazine> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(10.0),
                                       child: Text(
-                                        "PAINTINGS",
+                                        "MAGAZINE",
                                         style: TextStyle(
                                             color: Colors.black,
                                             fontFamily: 'OpenSans',
@@ -176,7 +156,7 @@ class _MagazineState extends State<Magazine> {
                                     height: 10.0,
                                   ),
                                   Text(
-                                    "Paint your dreams",
+                                    "You can open again and again.",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Colors.black,
@@ -199,9 +179,7 @@ class _MagazineState extends State<Magazine> {
                         GestureDetector(
                           onTap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Parnassus()));
+                                context, SizeRoute(page: Parnassus()));
                           },
                           child: _buildFruitCard(
                               "Parnassus",
@@ -215,15 +193,12 @@ class _MagazineState extends State<Magazine> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Hogan()));
+                            Navigator.push(context, SizeRoute(page: Hogan()));
                           },
                           child: _buildFruitCard(
-                             "Hogan's Alley",
+                              "Hogan's Alley",
                               "assets/hogan.jpg",
-                              "₹120", 
+                              "₹120",
                               0xff424242,
                               0XffFDDCC1),
                         ),
@@ -232,10 +207,7 @@ class _MagazineState extends State<Magazine> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Cadence()));
+                            Navigator.push(context, SizeRoute(page: Cadence()));
                           },
                           child: _buildFruitCard(
                               "Cadence",
@@ -259,77 +231,112 @@ class _MagazineState extends State<Magazine> {
     );
   }
 }
+
 _buildFruitCard(String name, String asset, String rate, int color, int color2) {
-    return Container(
-      width: 42.5 * SizeConfig.widthMultiplier,
-      decoration: BoxDecoration(
-        color: Color(color),
-        borderRadius: BorderRadius.circular(20.0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Align(
-            alignment: Alignment.topRight,
-            child: Container(
-              decoration: BoxDecoration(
+  return Container(
+    width: 42.5 * SizeConfig.widthMultiplier,
+    decoration: BoxDecoration(
+      color: Color(color),
+      borderRadius: BorderRadius.circular(20.0),
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Align(
+          alignment: Alignment.topRight,
+          child: Container(
+            decoration: BoxDecoration(
                 color: Color(color2),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20.0),
                   topRight: Radius.circular(20.0),
-                )
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Icon(Icons.add, color: Colors.white,),
+                )),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(
+                Icons.add,
+                color: Colors.white,
               ),
             ),
           ),
-          Center(
-            child: Image.asset(
-              asset,
+        ),
+        Center(
+          child: Image.asset(
+            asset,
             fit: BoxFit.contain,
             height: 30 * SizeConfig.imageSizeMultiplier,
-              width: 30 * SizeConfig.imageSizeMultiplier,),
+            width: 30 * SizeConfig.imageSizeMultiplier,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10.0, top: 10.0),
-            child: Text(name, style: TextStyle(
-              fontFamily: 'OpenSans-Bold',
-              fontWeight: FontWeight.bold,
-              color:Colors.white,
-              fontSize: 2.5 * SizeConfig.textMultiplier
-            ),),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 10.0, top: 10.0),
+          child: Text(
+            name,
+            style: TextStyle(
+                fontFamily: 'OpenSans-Bold',
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontSize: 2.5 * SizeConfig.textMultiplier),
           ),
-         
-          Padding(
-            padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
-            child: Row(
-              children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(rate, style: TextStyle(
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
+          child: Row(
+            children: <Widget>[
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    rate,
+                    style: TextStyle(
                         fontFamily: 'OpenSans',
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 2.5 * SizeConfig.textMultiplier
-                    ),),
-                    
-                  ],
-                ),
-                Spacer(),
-                Text("View details", style: TextStyle(
+                        fontSize: 2.5 * SizeConfig.textMultiplier),
+                  ),
+                ],
+              ),
+              Spacer(),
+              Text(
+                "View details",
+                style: TextStyle(
                     fontFamily: 'OpenSans',
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 1.3 * SizeConfig.textMultiplier
-                ),),
-              ],
+                    fontSize: 1.3 * SizeConfig.textMultiplier),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 2 * SizeConfig.heightMultiplier,
+        )
+      ],
+    ),
+  );
+}
+
+class SizeRoute extends PageRouteBuilder {
+  final Widget page;
+  SizeRoute({this.page})
+      : super(
+          pageBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+          ) =>
+              page,
+          transitionsBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+            Widget child,
+          ) =>
+              Align(
+            child: SizeTransition(
+              sizeFactor: animation,
+              child: child,
             ),
           ),
-          SizedBox(height: 2 * SizeConfig.heightMultiplier,)
-        ],
-      ),
-    );
-  }
+        );
+}

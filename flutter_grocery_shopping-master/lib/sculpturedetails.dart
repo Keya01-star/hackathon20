@@ -33,7 +33,19 @@ class Third extends StatefulWidget {
   _BuddhaState createState() => _BuddhaState();
 }
 
-class _BuddhaState extends State<Third> {
+class _BuddhaState extends State<Third> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,11 +83,14 @@ class _BuddhaState extends State<Third> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/buddha.jpeg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/buddha.jpeg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -278,7 +293,19 @@ class Fonseca extends StatefulWidget {
   _FonsecaState createState() => _FonsecaState();
 }
 
-class _FonsecaState extends State<Fonseca> {
+class _FonsecaState extends State<Fonseca> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -316,11 +343,14 @@ class _FonsecaState extends State<Fonseca> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/fonseca-bust.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/fonseca-bust.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -522,7 +552,19 @@ class Women extends StatefulWidget {
   _WomenState createState() => _WomenState();
 }
 
-class _WomenState extends State<Women> {
+class _WomenState extends State<Women> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -560,11 +602,14 @@ class _WomenState extends State<Women> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/women-figure.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/women-figure.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -618,7 +663,6 @@ class _WomenState extends State<Women> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
-           
                             left: 20.0, right: 20.0, top: 30.0),
                         child: Row(
                           children: <Widget>[
@@ -767,7 +811,19 @@ class Man extends StatefulWidget {
   _ManState createState() => _ManState();
 }
 
-class _ManState extends State<Man> {
+class _ManState extends State<Man> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -805,11 +861,14 @@ class _ManState extends State<Man> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/man-with-wings.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/man-with-wings.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -1011,7 +1070,19 @@ class Wing extends StatefulWidget {
   _WingState createState() => _WingState();
 }
 
-class _WingState extends State<Wing> {
+class _WingState extends State<Wing> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1049,11 +1120,14 @@ class _WingState extends State<Wing> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/winged-victory.png",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/winged-victory.png",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -1255,7 +1329,19 @@ class Julius extends StatefulWidget {
   _JuliusState createState() => _JuliusState();
 }
 
-class _JuliusState extends State<Julius> {
+class _JuliusState extends State<Julius> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1293,11 +1379,14 @@ class _JuliusState extends State<Julius> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/julius-caesar.jpeg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/julius-caesar.jpeg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -1499,7 +1588,19 @@ class Zeus extends StatefulWidget {
   _ZeusState createState() => _ZeusState();
 }
 
-class _ZeusState extends State<Zeus> {
+class _ZeusState extends State<Zeus> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1537,11 +1638,14 @@ class _ZeusState extends State<Zeus> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/Zeus-and-Ganymede-Terra-Cotta-Statue.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/Zeus-and-Ganymede-Terra-Cotta-Statue.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(

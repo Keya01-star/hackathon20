@@ -33,7 +33,19 @@ class Fourth extends StatefulWidget {
   _FourthState createState() => _FourthState();
 }
 
-class _FourthState extends State<Fourth> {
+class _FourthState extends State<Fourth> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,11 +83,14 @@ class _FourthState extends State<Fourth> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/frontline.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/frontline.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -278,7 +293,19 @@ class Operation extends StatefulWidget {
   _OperationState createState() => _OperationState();
 }
 
-class _OperationState extends State<Operation> {
+class _OperationState extends State<Operation> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -316,11 +343,14 @@ class _OperationState extends State<Operation> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/operation.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/operation.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -522,7 +552,19 @@ class Tinkle extends StatefulWidget {
   _TinkleState createState() => _TinkleState();
 }
 
-class _TinkleState extends State<Tinkle> {
+class _TinkleState extends State<Tinkle> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -560,11 +602,14 @@ class _TinkleState extends State<Tinkle> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/tinkle.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/tinkle.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -618,7 +663,6 @@ class _TinkleState extends State<Tinkle> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
-           
                             left: 20.0, right: 20.0, top: 30.0),
                         child: Row(
                           children: <Widget>[
@@ -767,7 +811,19 @@ class Clairon extends StatefulWidget {
   _ClaironState createState() => _ClaironState();
 }
 
-class _ClaironState extends State<Clairon> {
+class _ClaironState extends State<Clairon> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -805,11 +861,14 @@ class _ClaironState extends State<Clairon> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/clairon.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/clairon.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -1011,7 +1070,19 @@ class Parnassus extends StatefulWidget {
   _ParnassusState createState() => _ParnassusState();
 }
 
-class _ParnassusState extends State<Parnassus> {
+class _ParnassusState extends State<Parnassus> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1049,11 +1120,14 @@ class _ParnassusState extends State<Parnassus> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/parnassus.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/parnassus.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -1255,7 +1329,19 @@ class Hogan extends StatefulWidget {
   _HoganState createState() => _HoganState();
 }
 
-class _HoganState extends State<Hogan> {
+class _HoganState extends State<Hogan> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1293,11 +1379,14 @@ class _HoganState extends State<Hogan> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/hogan.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/hogan.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -1499,7 +1588,19 @@ class Cadence extends StatefulWidget {
   _CadenceState createState() => _CadenceState();
 }
 
-class _CadenceState extends State<Cadence> {
+class _CadenceState extends State<Cadence> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1537,11 +1638,14 @@ class _CadenceState extends State<Cadence> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/cadence.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/cadence.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
