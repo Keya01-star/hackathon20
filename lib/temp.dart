@@ -1,12 +1,17 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon/Sculpture.dart';
 import 'package:hackathon/magazine.dart';
 import 'package:hackathon/services/auth.dart';
+import 'package:hackathon/services/database.dart';
+import 'package:provider/provider.dart';
 import 'paintings.dart';
 import 'SizeConfig.dart';
 import 'configuration.dart';
 
 class Temp extends StatelessWidget {
+  String id;
+  Temp({this.id});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -15,8 +20,13 @@ class Temp extends StatelessWidget {
         return OrientationBuilder(
           builder: (context, orientation) {
             SizeConfig().init(constraints, orientation);
-            return Container(
-              child: MyMainPage(),
+            return StreamProvider<QuerySnapshot>.value(
+              value: DatabaseService().users,
+              child: Container(
+                child: MyMainPage(
+                  uid: id,
+                ),
+              ),
             );
           },
         );
@@ -26,9 +36,11 @@ class Temp extends StatelessWidget {
 }
 
 class MyMainPage extends StatefulWidget {
-  MyMainPage({Key key, this.title}) : super(key: key);
+  // MyMainPage({Key key, this.title}) : super(key: key);
 
-  final String title;
+  //final String title;
+  String uid;
+  MyMainPage({this.uid});
 
   @override
   _MyMainPageState createState() => _MyMainPageState();
@@ -64,6 +76,14 @@ class _MyMainPageState extends State<MyMainPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final users = Provider.of<QuerySnapshot>(context);
+    String name;
+    for (var doc in users.documents) {
+      if (doc.data['uid'] == widget.uid) {
+        name = doc.data['name'];
+      }
+    }
+    print('Name::' + name);
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
@@ -71,14 +91,14 @@ class _MyMainPageState extends State<MyMainPage> with TickerProviderStateMixin {
       backgroundColor: Colors.black,
       body: Stack(
         children: <Widget>[
-          menu(context),
+          menu(context, name),
           dashboard(context),
         ],
       ),
     );
   }
 
-  Widget menu(context) {
+  Widget menu(context, String name) {
     final Authservice _auth = Authservice();
     return SlideTransition(
       position: _slideAnimation,
@@ -106,7 +126,7 @@ class _MyMainPageState extends State<MyMainPage> with TickerProviderStateMixin {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Rohit Sharma',
+                              name,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,

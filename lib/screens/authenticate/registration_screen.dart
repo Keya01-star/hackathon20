@@ -121,7 +121,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     });
                     try {
                       final newUser =
-                          await _auth.regInWithEmail(email, password);
+                          await _auth.regInWithEmail(email, password, name);
                       if (newUser == null) {
                         //Navigator.pushNamed(context, ChatScreen.id);
                         //print('cant register');

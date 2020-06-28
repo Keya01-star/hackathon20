@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'SizeConfig.dart';
 import 'paintingdetails.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(MyApp());
 
@@ -155,15 +156,18 @@ class _PaintingsState extends State<Paintings> {
                                             Border.all(color: Colors.black)),
                                     child: Padding(
                                       padding: const EdgeInsets.all(10.0),
-                                      child: Text(
-                                        "PAINTINGS",
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontFamily: 'OpenSans',
-                                            fontSize:
-                                                1.7 * SizeConfig.textMultiplier,
-                                            fontWeight: FontWeight.bold),
-                                      ),
+                                      child: new InkWell(
+                                          child: Text(
+                                            "Want to know more? Click here",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontFamily: 'OpenSans',
+                                                fontSize: 1.7 *
+                                                    SizeConfig.textMultiplier,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          onTap: () => launch(
+                                              'https://www.timeout.com/newyork/art/top-famous-paintings-in-art-history-ranked')),
                                     ),
                                   ),
                                   SizedBox(

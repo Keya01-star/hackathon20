@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:hackathon/services/database.dart';
 import 'package:hackathon/user/user.dart';
 
 class Authservice {
@@ -41,11 +42,12 @@ class Authservice {
   }
 
   //reg with email
-  Future regInWithEmail(String email, String password) async {
+  Future regInWithEmail(String email, String password, String name) async {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       FirebaseUser user = result.user;
+      await DatabaseService(uid: user.uid).updateUserData(name);
       return user;
     } catch (e) {
       print(e.toString());

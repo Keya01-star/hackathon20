@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'SizeConfig.dart';
 import 'magazinedetails.dart';
 
@@ -141,14 +142,18 @@ class _MagazineState extends State<Magazine> {
                                             Border.all(color: Colors.black)),
                                     child: Padding(
                                       padding: const EdgeInsets.all(10.0),
-                                      child: Text(
-                                        "MAGAZINE",
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontFamily: 'OpenSans',
-                                            fontSize:
-                                                1.7 * SizeConfig.textMultiplier,
-                                            fontWeight: FontWeight.bold),
+                                      child: new InkWell(
+                                        child: Text(
+                                          "Want to know more? Click here",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontFamily: 'OpenSans',
+                                              fontSize: 1.7 *
+                                                  SizeConfig.textMultiplier,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        onTap: () => launch(
+                                            'https://en.wikipedia.org/wiki/List_of_magazines_in_India'),
                                       ),
                                     ),
                                   ),

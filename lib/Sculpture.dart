@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'SizeConfig.dart';
 //import 'package:flutter_grocery_shopping/paintingdetails.dart';
 import 'sculpturedetails.dart';
@@ -141,14 +142,18 @@ class _SculptureState extends State<Sculpture> {
                                             Border.all(color: Colors.black)),
                                     child: Padding(
                                       padding: const EdgeInsets.all(10.0),
-                                      child: Text(
-                                        "SCULPTURE",
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontFamily: 'OpenSans',
-                                            fontSize:
-                                                1.7 * SizeConfig.textMultiplier,
-                                            fontWeight: FontWeight.bold),
+                                      child: new InkWell(
+                                        child: Text(
+                                          "Want to know more? Click here",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontFamily: 'OpenSans',
+                                              fontSize: 1.7 *
+                                                  SizeConfig.textMultiplier,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        onTap: () => launch(
+                                            'https://www.timeout.com/newyork/art/top-famous-sculptures-of-all-time'),
                                       ),
                                     ),
                                   ),
