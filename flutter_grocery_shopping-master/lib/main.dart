@@ -5,6 +5,7 @@ import 'package:flutter_grocery_shopping/magazine.dart';
 import 'package:flutter_grocery_shopping/paintings.dart';
 import 'package:flutter_grocery_shopping/Sculpture.dart';
 import 'package:flutter_grocery_shopping/magazine.dart';
+import 'package:flutter_grocery_shopping/configuration.dart';
 
 void main() => runApp(MyApp());
 
@@ -96,14 +97,106 @@ class _MyMainPageState extends State<MyMainPage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text("Profile",
-                    style: TextStyle(color: Colors.white, fontSize: 22)),
-                SizedBox(height: 10),
-                Text("Orders",
-                    style: TextStyle(color: Colors.white, fontSize: 22)),
-                SizedBox(height: 10),
-                Text("wishlist",
-                    style: TextStyle(color: Colors.white, fontSize: 22)),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        CircleAvatar(),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Rohit Sharma',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 28,
+                              ),
+                            ),
+                            Text(
+                              'Active Status',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 80),
+                    Column(
+                      children: drawerItems
+                          .map((element) => Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      element['icon'],
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(element['title'],
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20))
+                                  ],
+                                ),
+                              ))
+                          .toList(),
+                    ),
+                    SizedBox(
+                      height: 100,
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.settings,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Settings',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          width: 2,
+                          height: 20,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Log out',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ],
             ),
           ),
