@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hackathon/screens/authenticate/authenticate.dart';
-import 'package:hackathon/screens/home/home.dart';
+import 'package:hackathon/main.dart';
+
+import 'package:hackathon/temp.dart';
 import 'package:hackathon/user/user.dart';
 import 'package:provider/provider.dart';
 
@@ -10,9 +11,9 @@ class Wrapper extends StatelessWidget {
     final user = Provider.of<User>(context);
     print(user);
     if (user == null) {
-      return Authenticate();
+      return MyHomePage();
     } else {
-      return Home();
+      return Temp();
     }
   }
 }

@@ -1,7 +1,4 @@
-import 'package:hackathon/screens/authenticate/RoundButton.dart';
 import 'package:flutter/material.dart';
-import 'package:hackathon/screens/authenticate/constants.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hackathon/services/auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
@@ -23,74 +20,101 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          padding: EdgeInsets.fromLTRB(30, 50, 30, 10),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              //crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Hero(
-                  tag: 'logo',
-                  child: Container(
-                    height: 200.0,
-                    child: Image.asset('images/logo.png'),
-                  ),
+                SizedBox(
+                  height: 40,
                 ),
+                Text('Register',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30.0,
+                    )),
                 SizedBox(
                   height: 48.0,
                 ),
                 TextField(
-                  style: kTextStyle,
-                  textAlign: TextAlign.center,
-                  keyboardType: TextInputType.emailAddress,
-                  onChanged: (value) {
-                    email = value;
-                    //Do something with the user input.
-                  },
-                  decoration: kInputTextFieldDecoration.copyWith(
-                    hintText: 'Enter Your Email',
-                  ),
-                ),
+                    //style: kTextStyle,
+                    style: TextStyle(color: Colors.white),
+                    //textAlign: TextAlign.center,
+                    keyboardType: TextInputType.emailAddress,
+                    onChanged: (value) {
+                      email = value;
+                      //Do something with the user input.
+                    },
+                    decoration: InputDecoration(
+                        labelText: 'email',
+                        icon: Icon(
+                          Icons.email,
+                          color: Colors.orange[200],
+                        ),
+                        labelStyle: TextStyle(color: Colors.grey),
+                        enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white)),
+                        focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white)))),
                 SizedBox(
-                  height: 8.0,
+                  height: 50.0,
                 ),
                 TextField(
-                  style: kTextStyle,
-                  textAlign: TextAlign.center,
+                  //style: kTextStyle,
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white),
                   keyboardType: TextInputType.text,
                   onChanged: (value) {
                     name = value;
                     //Do something with the user input.
                   },
-                  decoration: kInputTextFieldDecoration.copyWith(
-                    hintText: 'Enter Your Name',
-                  ),
+                  decoration: InputDecoration(
+                      labelText: 'Name',
+                      icon: Icon(
+                        Icons.person,
+                        color: Colors.orange[200],
+                      ),
+                      labelStyle: TextStyle(color: Colors.grey),
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white))),
                 ),
                 SizedBox(
-                  height: 8.0,
+                  height: 50.0,
                 ),
                 TextField(
-                  style: kTextStyle,
+                  //style: kTextStyle,
                   obscureText: true,
-                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white),
+                  //textAlign: TextAlign.center,
                   onChanged: (value) {
                     //Do something with the user input.
                     password = value;
                   },
-                  decoration: kInputTextFieldDecoration.copyWith(
-                    hintText: 'Enter your Password',
-                  ),
+                  decoration: InputDecoration(
+                      labelText: 'Password',
+                      icon: Icon(
+                        Icons.vpn_key,
+                        color: Colors.orange[200],
+                      ),
+                      labelStyle: TextStyle(color: Colors.grey),
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white))),
                 ),
                 SizedBox(
-                  height: 24.0,
+                  height: 50.0,
                 ),
-                RoundButton(
-                  title: 'Register',
-                  color: Colors.lightBlueAccent,
+                RaisedButton(
+                  child: Text('Register'),
+                  color: Colors.orange[200],
                   onPressed: () async {
                     setState(() {
                       showSpinner = true;
