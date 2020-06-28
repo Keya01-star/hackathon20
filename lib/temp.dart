@@ -118,10 +118,6 @@ class _MyMainPageState extends State<MyMainPage> with TickerProviderStateMixin {
                   children: [
                     Row(
                       children: [
-                        CircleAvatar(),
-                        SizedBox(
-                          width: 10,
-                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
