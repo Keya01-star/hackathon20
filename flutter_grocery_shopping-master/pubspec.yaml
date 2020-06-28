@@ -49,6 +49,20 @@ flutter:
     - assets/monalisa.jpg
     - assets/Pieter_Bruegel_the_Elder.jpg
     - assets/Vincent_van_Gogh.jpg
+    - assets/buddha.jpeg
+    - assets/fonseca-bust.jpg
+    - assets/julius-caesar.jpeg
+    - assets/man-with-wings.jpg
+    - assets/winged-victory.png
+    - assets/women-figure.jpg
+    - assets/Zeus-and-Ganymede-Terra-Cotta-Statue.jpg
+    - assets/cadence.jpg
+    - assets/clairon.jpg
+    - assets/frontline.jpg
+    - assets/hogan.jpg
+    - assets/operation.jpg
+    - assets/parnassus.jpg
+    - assets/tinkle.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grocery_shopping/SizeConfig.dart';
 import 'package:flutter_grocery_shopping/paintings.dart';
-import 'package:flutter_grocery_shopping/nuts.dart';
-import 'package:flutter_grocery_shopping/vegetables.dart';
+import 'package:flutter_grocery_shopping/Sculpture.dart';
+import 'package:flutter_grocery_shopping/magazine.dart';
 
 void main() => runApp(MyApp());
 
@@ -127,7 +127,7 @@ class _MyMainPageState extends State<MyMainPage>
                 ),
                 Tab(
                   child: Text(
-                    "Sculpture",
+                    "Magazine",
                     style: TextStyle(
                         fontSize: 2.5 * SizeConfig.textMultiplier,
                         fontFamily: 'OpenSans'),
@@ -135,7 +135,7 @@ class _MyMainPageState extends State<MyMainPage>
                 ),
                 Tab(
                   child: Text(
-                    "Magazine",
+                    "Sculpture",
                     style: TextStyle(
                         fontSize: 2.5 * SizeConfig.textMultiplier,
                         fontFamily: 'OpenSans'),
@@ -146,8 +146,8 @@ class _MyMainPageState extends State<MyMainPage>
             child: Container(
               child: TabBarView(controller: tabController, children: <Widget>[
                 Paintings(),
-                Vegetables(),
-                Nuts(),
+                Magazine(),
+                Sculpture(),
               ]),
             ),
           )

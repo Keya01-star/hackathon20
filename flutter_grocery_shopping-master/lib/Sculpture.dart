@@ -1,44 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grocery_shopping/SizeConfig.dart';
-import 'package:flutter_grocery_shopping/paintingdetails.dart';
-
-void main() => runApp(MyApp());
+//import 'package:flutter_grocery_shopping/paintingdetails.dart';
+import 'package:flutter_grocery_shopping/sculpturedetails.dart';
+void main() => runApp(MyAppnew());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return OrientationBuilder(
-          builder: (context, orientation) {
-            SizeConfig().init(constraints, orientation);
-            return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              title: 'HomeScreen App',
-              home: Paintings(),
-            );
-          },
-        );
-      },
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      home: Sculpture(),
     );
   }
 }
 
-class Paintings extends StatefulWidget {
-  Paintings({Key key, this.title}) : super(key: key);
+class Sculpture extends StatefulWidget {
+  Sculpture({Key key, this.title}) : super(key: key);
+
 
   final String title;
 
   @override
-  _PaintingsState createState() => _PaintingsState();
+  _SculptureState createState() => _SculptureState();
 }
 
-class _PaintingsState extends State<Paintings> {
+class _SculptureState extends State<Sculpture> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: Colors.brown,
       body: SingleChildScrollView(
         child: Column(
@@ -57,12 +50,12 @@ class _PaintingsState extends State<Paintings> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Second()));
+                                    builder: (context) => Third()));
                           },
                           child: _buildFruitCard(
-                              "Claude Monet",
-                              "assets/Claude_Monet.jpg",
-                              "₹12000",
+                              "Buddha",
+                              "assets/buddha.jpeg",
+                              "₹9000",
                               0xff424242,
                               0XffFAF0DA),
                         ),
@@ -74,12 +67,12 @@ class _PaintingsState extends State<Paintings> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Johannes()));
+                                    builder: (context) => Fonseca()));
                           },
                           child: _buildFruitCard(
-                              "Johannes Vermeer",
-                              "assets/Johannes_Vermeer.jpg",
-                              "₹13000",
+                              "Fonseca Bust",
+                              "assets/fonseca-bust.jpg",
+                              "₹10000",
                               0xff000000,
                               0XffE0E8CF),
                         ),
@@ -91,12 +84,13 @@ class _PaintingsState extends State<Paintings> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => James()));
+                                    builder: (context) => Women()));
                           },
                           child: _buildFruitCard(
-                              "James Abbott McNeill Whistler",
-                              "assets/James_Abbott_McNeill_Whistler.jpg",
-                              "₹15000",
+                            "Women Sculpture",
+                              "assets/women-figure.jpg",
+                              "₹5000",
+                              
                               0xff424242,
                               0XffF9EFB0),
                         ),
@@ -108,12 +102,12 @@ class _PaintingsState extends State<Paintings> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Pablo()));
+                                    builder: (context) => Man()));
                           },
                           child: _buildFruitCard(
-                              "Pablo Picasso",
-                              "assets/Pablo_Picasso.png",
-                              "₹20000",
+                              "Man with wings",
+                              "assets/man-with-wings.jpg",
+                              "₹15000",
                               0xff000000,
                               0XffF9EFB0),
                         )
@@ -206,12 +200,12 @@ class _PaintingsState extends State<Paintings> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Monalisa()));
+                                    builder: (context) => Wing()));
                           },
                           child: _buildFruitCard(
-                              "Monalisa",
-                              "assets/monalisa.jpg",
-                              "₹12000",
+                              "Winged Victory",
+                              "assets/winged-victory.png",
+                              "₹8000",
                               0xff000000,
                               0XffFDDCC1),
                         ),
@@ -223,12 +217,12 @@ class _PaintingsState extends State<Paintings> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Pieter()));
+                                    builder: (context) => Julius()));
                           },
                           child: _buildFruitCard(
-                              "Pieter Bruegel the Elder",
-                              "assets/Pieter_Bruegel_the_Elder.jpg",
-                              "₹14500",
+                             "Julius Caesar",
+                              "assets/julius-caesar.jpeg",
+                              "₹12000", 
                               0xff424242,
                               0XffFDDCC1),
                         ),
@@ -240,12 +234,12 @@ class _PaintingsState extends State<Paintings> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Vincent()));
+                                    builder: (context) => Zeus()));
                           },
                           child: _buildFruitCard(
-                              "Vincent van Gogh",
-                              "assets/Vincent_van_Gogh.jpg",
-                              "₹15500",
+                              "Zeus and Ganymede",
+                              "assets/Zeus-and-Ganymede-Terra-Cotta-Statue.jpg",
+                              "₹10000",
                               0xff000000,
                               0XffF8C6CA),
                         ),
@@ -261,11 +255,11 @@ class _PaintingsState extends State<Paintings> {
           ],
         ),
       ),
+
     );
   }
-
-  _buildFruitCard(
-      String name, String asset, String rate, int color, int color2) {
+}
+_buildFruitCard(String name, String asset, String rate, int color, int color2) {
     return Container(
       width: 42.5 * SizeConfig.widthMultiplier,
       decoration: BoxDecoration(
@@ -279,39 +273,35 @@ class _PaintingsState extends State<Paintings> {
             alignment: Alignment.topRight,
             child: Container(
               decoration: BoxDecoration(
-                  color: Color(color2),
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(20.0),
-                    topRight: Radius.circular(20.0),
-                  )),
+                color: Color(color2),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20.0),
+                  topRight: Radius.circular(20.0),
+                )
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Icon(
-                  Icons.add,
-                  color: Colors.white,
-                ),
+                child: Icon(Icons.add, color: Colors.white,),
               ),
             ),
           ),
           Center(
             child: Image.asset(
               asset,
-              fit: BoxFit.contain,
-              height: 30 * SizeConfig.imageSizeMultiplier,
-              width: 30 * SizeConfig.imageSizeMultiplier,
-            ),
+            fit: BoxFit.contain,
+            height: 30 * SizeConfig.imageSizeMultiplier,
+              width: 30 * SizeConfig.imageSizeMultiplier,),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 10.0, top: 10.0),
-            child: Text(
-              name,
-              style: TextStyle(
-                  fontFamily: 'OpenSans-Bold',
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 2.5 * SizeConfig.textMultiplier),
-            ),
+            child: Text(name, style: TextStyle(
+              fontFamily: 'OpenSans-Bold',
+              fontWeight: FontWeight.bold,
+              color:Colors.white,
+              fontSize: 2.5 * SizeConfig.textMultiplier
+            ),),
           ),
+         
           Padding(
             padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
             child: Row(
@@ -319,33 +309,27 @@ class _PaintingsState extends State<Paintings> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      rate,
-                      style: TextStyle(
-                          fontFamily: 'OpenSans',
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 2.5 * SizeConfig.textMultiplier),
-                    ),
+                    Text(rate, style: TextStyle(
+                        fontFamily: 'OpenSans',
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 2.5 * SizeConfig.textMultiplier
+                    ),),
+                    
                   ],
                 ),
                 Spacer(),
-                Text(
-                  "View details",
-                  style: TextStyle(
-                      fontFamily: 'OpenSans',
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 1.3 * SizeConfig.textMultiplier),
-                ),
+                Text("View details", style: TextStyle(
+                    fontFamily: 'OpenSans',
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 1.3 * SizeConfig.textMultiplier
+                ),),
               ],
             ),
           ),
-          SizedBox(
-            height: 2 * SizeConfig.heightMultiplier,
-          )
+          SizedBox(height: 2 * SizeConfig.heightMultiplier,)
         ],
       ),
     );
   }
-}
