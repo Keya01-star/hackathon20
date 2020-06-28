@@ -33,9 +33,22 @@ class Second extends StatefulWidget {
   _ClaudeState createState() => _ClaudeState();
 }
 
-class _ClaudeState extends State<Second> {
+class _ClaudeState extends State<Second> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
+    //_controller.forward();
     return Scaffold(
       body: Column(
         children: <Widget>[
@@ -71,11 +84,14 @@ class _ClaudeState extends State<Second> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/Claude_Monet.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/Claude_Monet.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -278,7 +294,19 @@ class Johannes extends StatefulWidget {
   _JohannesState createState() => _JohannesState();
 }
 
-class _JohannesState extends State<Johannes> {
+class _JohannesState extends State<Johannes> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -316,11 +344,14 @@ class _JohannesState extends State<Johannes> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/Johannes_Vermeer.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/Johannes_Vermeer.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -522,7 +553,19 @@ class Monalisa extends StatefulWidget {
   _MonalisaState createState() => _MonalisaState();
 }
 
-class _MonalisaState extends State<Monalisa> {
+class _MonalisaState extends State<Monalisa> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -560,11 +603,14 @@ class _MonalisaState extends State<Monalisa> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/monalisa.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/monalisa.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -766,7 +812,19 @@ class James extends StatefulWidget {
   _JamesState createState() => _JamesState();
 }
 
-class _JamesState extends State<James> {
+class _JamesState extends State<James> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -802,15 +860,17 @@ class _JamesState extends State<James> {
                 ),
               ),
               Positioned(
-                top: 130.0,
-                left: 100.0,
-                child: Image.asset(
-                  "assets/James_Abbott_McNeill_Whistler.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
-                ),
-              ),
+                  top: 130.0,
+                  left: 100.0,
+                  child: FadeTransition(
+                    opacity: animation,
+                    child: Image.asset(
+                      "assets/James_Abbott_McNeill_Whistler.jpg",
+                      fit: BoxFit.contain,
+                      height: 50 * SizeConfig.imageSizeMultiplier,
+                      width: 50 * SizeConfig.imageSizeMultiplier,
+                    ),
+                  )),
               Positioned(
                 top: 45 * SizeConfig.heightMultiplier,
                 child: Container(
@@ -1010,7 +1070,19 @@ class Pieter extends StatefulWidget {
   _PieterState createState() => _PieterState();
 }
 
-class _PieterState extends State<Pieter> {
+class _PieterState extends State<Pieter> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1048,11 +1120,14 @@ class _PieterState extends State<Pieter> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/Pieter_Bruegel_the_Elder.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/Pieter_Bruegel_the_Elder.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -1254,7 +1329,19 @@ class Pablo extends StatefulWidget {
   _PabloState createState() => _PabloState();
 }
 
-class _PabloState extends State<Pablo> {
+class _PabloState extends State<Pablo> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1292,11 +1379,14 @@ class _PabloState extends State<Pablo> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/Pablo_Picasso.png",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/Pablo_Picasso.png",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
@@ -1498,7 +1588,19 @@ class Vincent extends StatefulWidget {
   _VincentState createState() => _VincentState();
 }
 
-class _VincentState extends State<Vincent> {
+class _VincentState extends State<Vincent> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+
+  initState() {
+    super.initState();
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1536,11 +1638,14 @@ class _VincentState extends State<Vincent> {
               Positioned(
                 top: 130.0,
                 left: 100.0,
-                child: Image.asset(
-                  "assets/Vincent_van_Gogh.jpg",
-                  fit: BoxFit.contain,
-                  height: 50 * SizeConfig.imageSizeMultiplier,
-                  width: 50 * SizeConfig.imageSizeMultiplier,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: Image.asset(
+                    "assets/Vincent_van_Gogh.jpg",
+                    fit: BoxFit.contain,
+                    height: 50 * SizeConfig.imageSizeMultiplier,
+                    width: 50 * SizeConfig.imageSizeMultiplier,
+                  ),
                 ),
               ),
               Positioned(
