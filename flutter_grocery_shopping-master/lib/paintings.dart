@@ -54,10 +54,7 @@ class _PaintingsState extends State<Paintings> {
                       children: <Widget>[
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Second()));
+                            Navigator.push(context, SizeRoute(page: Second()));
                           },
                           child: _buildFruitCard(
                               "Claude Monet",
@@ -72,9 +69,7 @@ class _PaintingsState extends State<Paintings> {
                         GestureDetector(
                           onTap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Johannes()));
+                                context, SizeRoute(page: Johannes()));
                           },
                           child: _buildFruitCard(
                               "Johannes Vermeer",
@@ -88,10 +83,7 @@ class _PaintingsState extends State<Paintings> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => James()));
+                            Navigator.push(context, SizeRoute(page: James()));
                           },
                           child: _buildFruitCard(
                               "James Abbott McNeill Whistler",
@@ -105,10 +97,7 @@ class _PaintingsState extends State<Paintings> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Pablo()));
+                            Navigator.push(context, SizeRoute(page: Pablo()));
                           },
                           child: _buildFruitCard(
                               "Pablo Picasso",
@@ -204,9 +193,7 @@ class _PaintingsState extends State<Paintings> {
                         GestureDetector(
                           onTap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Monalisa()));
+                                context, SizeRoute(page: Monalisa()));
                           },
                           child: _buildFruitCard(
                               "Monalisa",
@@ -220,10 +207,7 @@ class _PaintingsState extends State<Paintings> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Pieter()));
+                            Navigator.push(context, SizeRoute(page: Pieter()));
                           },
                           child: _buildFruitCard(
                               "Pieter Bruegel the Elder",
@@ -237,10 +221,7 @@ class _PaintingsState extends State<Paintings> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Vincent()));
+                            Navigator.push(context, SizeRoute(page: Vincent()));
                           },
                           child: _buildFruitCard(
                               "Vincent van Gogh",
@@ -348,4 +329,29 @@ class _PaintingsState extends State<Paintings> {
       ),
     );
   }
+}
+
+class SizeRoute extends PageRouteBuilder {
+  final Widget page;
+  SizeRoute({this.page})
+      : super(
+          pageBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+          ) =>
+              page,
+          transitionsBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+            Widget child,
+          ) =>
+              Align(
+            child: SizeTransition(
+              sizeFactor: animation,
+              child: child,
+            ),
+          ),
+        );
 }
